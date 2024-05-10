@@ -56,7 +56,7 @@ class SocialSharePlugin:FlutterPlugin, MethodCallHandler, ActivityAware {
             if (call.method == "shareInstagramStory") {
                 destination = "com.instagram.sharedSticker"
                 appName = "com.instagram.android"
-                intentString = "com.instagram.share.ADD_TO_STORY"
+                intentString = "com.instagram.share.ADD_TO_FEED"
             } else {
                 destination = "com.facebook.sharedSticker";
                 appName = "com.facebook.katana";
