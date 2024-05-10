@@ -56,7 +56,7 @@ class SocialSharePlugin:FlutterPlugin, MethodCallHandler, ActivityAware {
             if (call.method == "shareInstagramStory") {
                 destination = "com.instagram.sharedSticker"
                 appName = "com.instagram.android"
-                intentString = "com.instagram.share.ADD_TO_FEED"
+                intentString = "com.instagram.share.ADD_TO_STORY"
             } else {
                 destination = "com.facebook.sharedSticker";
                 appName = "com.facebook.katana";
@@ -74,7 +74,7 @@ class SocialSharePlugin:FlutterPlugin, MethodCallHandler, ActivityAware {
             val stickerImageFile = FileProvider.getUriForFile(activeContext!!, activeContext!!.applicationContext.packageName + ".com.shekarmudaliyar.social_share", file)
             val appId: String? = call.argument("appId")
 
-            val intent = Intent(intentString)
+            val intent = Intent()
 
             intent.type = "image/*"
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
